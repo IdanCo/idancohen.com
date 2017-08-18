@@ -2,20 +2,22 @@
   margin-top: -8rem;
 }
 
-i.fa {
+a.social {
   font-size: 2rem;
-  margin-right: 2rem;
-  cursor: pointer;
+  padding: 1rem;
   transition: all .2s ease-in-out;
+  display: inline-block;
 
   &:hover {
     transform: scale(1.5);
+    text-decoration: none;
   }
 
   &:last-child {
     margin-right: 0;
   }
 }
+
 
 
 .photo {

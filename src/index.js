@@ -1,11 +1,9 @@
 // Entry point for entire app
 
-// Frameworks
+// Frameworks and Resources
 import angular from 'angular';
-
-// import Bootstrap's compiled javascript:
 import 'bootstrap';
-
+import 'angular-mousewheel'
 // import general styling (including bootstrap):
 import './index.scss'
 
@@ -18,5 +16,6 @@ import ComponentsModule from './components/components.module';
 // Register app
 angular
   .module('app', [
-    ComponentsModule
+    ComponentsModule,
+    'monospaced.mousewheel'
   ]);

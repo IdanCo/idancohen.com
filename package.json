@@ -24,6 +24,7 @@
   "homepage": "https://github.com/IdanCo/webpack-modular#readme",
   "dependencies": {
     "angular": "^1.6.3",
+    "angular-mousewheel": "^1.0.5",
     "bootstrap": "4.0.0-beta",
     "popper.js": "^1.11.0"
   },

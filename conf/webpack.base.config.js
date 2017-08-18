@@ -87,6 +87,7 @@ module.exports = new WebpackConfig().merge({
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default'],
+      Hamster: 'hamsterjs',
       // in case bootstrap's modules were imported individually, they must also be provided here:
       // Util: "exports-loader?Util!bootstrap/js/dist/util",
     }),
