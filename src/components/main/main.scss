@@ -1,8 +1,25 @@
-.main::after {
-  display: block;
-  content: 'SASS is working!'
+.main-title {
+  margin-top: -8rem;
 }
 
-.test-bootstrap {
-  display: none; // this should be overridden by bootstrap
+i.fa {
+  font-size: 2rem;
+  margin-right: 2rem;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+
+.photo {
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
 }
