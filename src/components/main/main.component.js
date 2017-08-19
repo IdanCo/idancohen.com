@@ -3,15 +3,24 @@ import MainTemplate from './main.html';
 
 // Set up controller
 class MainController {
-  constructor($element) {
+  constructor($rootScope, $element) {
     this.$element = $element;
-
+    this.$rootScope = $rootScope;
   }
 
   $onInit() {
     this.scrollingPosition = 1553;
     this.backgroundStyle = {};
     this.colorStyle = {};
+
+    // add listener for mobile scrolling
+    document.addEventListener('touchmove', (event) => {
+      this.scrollingPosition += event.changedTouches[0].pageY - this.lastTouchPosition || 0;
+      this.lastTouchPosition = event.changedTouches[0].pageY;
+      this.setColors();
+      event.preventDefault();
+      this.$rootScope.$apply();
+      }, true);
 
     this.socialArray = [
       {
@@ -38,10 +47,9 @@ class MainController {
     this.setColors();
   }
 
-  scrolling(deltaY) {
+  scrolling(event, deltaY) {
     this.scrollingPosition += deltaY;
     this.setColors();
-    event.stopPropagation();
     event.preventDefault();
   }
 
@@ -50,7 +58,6 @@ class MainController {
     const css = `rgb(${rgb.red}, ${rgb.green}, ${rgb.blue})`;
     this.backgroundStyle['background-color'] = css;
     this.colorStyle['color'] = css;
-
   }
 
   getRGB(scrollingPosition) {
@@ -66,7 +73,7 @@ class MainController {
 }
 
 // annotate injections
-MainController.$inject = ['$element'];
+MainController.$inject = ['$rootScope', '$element'];
 
 // Define and export component
 export default {

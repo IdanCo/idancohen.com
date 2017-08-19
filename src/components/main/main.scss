@@ -26,6 +26,7 @@ a.social {
 @media (min-width: 767px) {
   .photo {
     position: absolute;
+    max-width: 20%;
   }
   .main-title {
     margin-top: -8rem;
@@ -33,6 +34,9 @@ a.social {
 }
 
 @media (max-width: 767px) {
+  html {
+    font-size: 14px
+  }
   .photo {
     width: 50%;
   }
