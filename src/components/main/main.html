@@ -1,15 +1,14 @@
 <div class="container-fluid h-100" msd-wheel="$ctrl.scrolling($deltaY)">
     <div class="row justify-content-center align-items-center h-100">
-        <div class="col-md-6 text-center main-title">
-            <h1 class="display-1 mb-4" ng-click="$ctrl.photoStyle['background-color'] = 'green'">
+        <div class="col-md-12 text-center main-title">
+            <h1 class="display-4 mb-3">
                 Idan Cohen
             </h1>
-            <a ng-repeat="social in $ctrl.socialArray" ng-href="social.link" class="social">
-                <i class="fa" ng-class="social.icon" ng-style="$ctrl.rainbowColor"></i>
+            <a ng-repeat="social in $ctrl.socialArray" ng-href="{{ social.link }}" class="social">
+                <i class="fa" ng-class="social.icon" ng-style="$ctrl.colorStyle"></i>
             </a>
-
         </div>
-        <div class="col-md-2 photo p-0" ng-style="$ctrl.rainbowBackground">
+        <div class="col-md-3 photo p-0" ng-style="$ctrl.backgroundStyle">
             <img src="/src/images/idan.png" class="img-fluid" alt="Responsive image">
         </div>
     </div>

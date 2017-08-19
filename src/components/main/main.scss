@@ -1,5 +1,5 @@
 .main-title {
-  margin-top: -8rem;
+  font-family: 'Comfortaa', cursive;
 }
 
 a.social {
@@ -18,10 +18,22 @@ a.social {
   }
 }
 
-
-
 .photo {
-  position: absolute;
   right: 0;
   bottom: 1rem;
+}
+
+@media (min-width: 767px) {
+  .photo {
+    position: absolute;
+  }
+  .main-title {
+    margin-top: -8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .photo {
+    width: 50%;
+  }
 }

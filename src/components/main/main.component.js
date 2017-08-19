@@ -9,9 +9,9 @@ class MainController {
   }
 
   $onInit() {
-    this.scrollingPosition = 1156;
-    this.rainbowBackground = {};
-    this.rainbowColor = {};
+    this.scrollingPosition = 1553;
+    this.backgroundStyle = {};
+    this.colorStyle = {};
 
     this.socialArray = [
       {
@@ -48,17 +48,18 @@ class MainController {
   setColors() {
     const rgb = this.getRGB(this.scrollingPosition);
     const css = `rgb(${rgb.red}, ${rgb.green}, ${rgb.blue})`;
-    this.rainbowBackground['background-color'] = css;
-    this.rainbowColor['color'] = css;
+    this.backgroundStyle['background-color'] = css;
+    this.colorStyle['color'] = css;
 
   }
 
   getRGB(scrollingPosition) {
-    let frequency = .001;
+    // inspired by https://krazydad.com/tutorials/makecolors.php
+    let frequency = .005;
     const rgb = {
-      red:    Math.round(Math.sin(frequency * scrollingPosition + 0) * 127) + 128,
-      green:  Math.round(Math.sin(frequency * scrollingPosition + 1) * 127) + 64,
-      blue:   Math.round(Math.sin(frequency * scrollingPosition + 4) * 127) + 0
+      red:    Math.round(Math.sin(frequency * scrollingPosition + 0) * 20) + 235,
+      green:  Math.round(Math.sin(frequency * scrollingPosition + 2) * 40) + 215,
+      blue:   Math.round(Math.sin(frequency * scrollingPosition + 4) * 40) + 40
     };
     return rgb;
   }
