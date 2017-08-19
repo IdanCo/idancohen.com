@@ -15,10 +15,12 @@ class MainController {
 
     // add listener for mobile scrolling
     document.addEventListener('touchmove', (event) => {
-      this.scrollingPosition += event.changedTouches[0].pageY - this.lastTouchPosition || 0;
+      if (!this.lastTouchPosition || Math.abs(event.changedTouches[0].pageY - this.lastTouchPosition) > 100) {
+        this.lastTouchPosition = event.changedTouches[0].pageY;
+      }
+      this.scrollingPosition += (event.changedTouches[0].pageY - this.lastTouchPosition) * 3;
       this.lastTouchPosition = event.changedTouches[0].pageY;
       this.setColors();
-      event.preventDefault();
       this.$rootScope.$apply();
       }, true);
 
